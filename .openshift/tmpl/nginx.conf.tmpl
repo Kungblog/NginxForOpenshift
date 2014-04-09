@@ -17,8 +17,8 @@ worker_processes 2;
 # This should be > worker_connections
 worker_rlimit_nofile 8192;
 
-error_log ${OPENSHIFT_LOG_DIR}/error.log;
-pid ${OPENSHIFT_RUN_DIR}/nginx.pid;
+error_log ${OPENSHIFT_HOMEDIR}/app-root/logs/error.log;
+pid ${OPENSHIFT_HOMEDIR}/diy/run/nginx.pid;
 
 events {
   # When you need > 8000 * cpu_cores connections, you start optimizing
@@ -48,7 +48,7 @@ http {
 
     sendfile on;
     keepalive_timeout 5;
-    access_log ${OPENSHIFT_LOG_DIR}/access.log;
+    access_log ${OPENSHIFT_HOMEDIR}/app-root/logs/access.log;
 
     port_in_redirect off;
     server_tokens off;
@@ -98,7 +98,7 @@ http {
 
         # It is best to place the root of the server block at the server level, and not the location level
         # any location block path will be relative to this root.
-        root   ${OPENSHIFT_REPO_DIR}/php;
+        root   ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/php;
 
         # Forces modern clients to use secure connections only for at
         # least 8 days after the header was last returned. See:
@@ -134,7 +134,7 @@ http {
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #location ~ ^/index\.php(/|$) {
         location ~ \.php$ {
-            fastcgi_pass unix:${OPENSHIFT_RUN_DIR}/php-fpm.socket;
+            fastcgi_pass unix:${OPENSHIFT_HOMEDIR}/diy/run/php-fpm.socket;
 
             fastcgi_param SCRIPT_FILENAME    $document_root$fastcgi_script_name;
             fastcgi_param PATH_INFO $fastcgi_script_name;

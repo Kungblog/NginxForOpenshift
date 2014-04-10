@@ -3,7 +3,10 @@
         <div class="markdown-body">
             Nginx+PHP 一键包
             <p>
-                嘛，从Whuihuan那儿fork了这个仓库，发现有点小问题，没法正常的一撸到底，稍稍修改了一下。README我就参照我的喜好写了。。这是一个Openshift架设Nginx+PHP5.3+Zend Guard Loader的一键包。
+                嘛，从Whuihuan那儿fork了这个仓库，发现有点小问题，没法正常的一撸到底，稍稍修改了一下。README我就参照我的喜好写了。。
+            </p>
+            <p>
+                这是一个Openshift架设Nginx+PHP5.3+Zend Guard Loader的一键包。
             </p>
             <p>
                 文件夹

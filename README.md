@@ -2,6 +2,9 @@
     <div id="readme" class="blob instapaper_body">
         <div class="markdown-body">
             Nginx+PHP 一键包
+            <P>
+            这个一键包已经改过了,不能用于在openshift建立PHP+Zend环境,反之我正在努力的将其打造为MinecraftPE服务器.所以请不要使用这个环境在openshift部署,一旦导致出现问题,后果自负.
+            </p>
             <p>
                 嘛，从Whuihuan那儿fork了这个仓库，发现有点小问题，没法正常的一撸到底，稍稍修改了一下。README我就参照我的喜好写了。。
             </p>
